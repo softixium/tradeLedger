@@ -1,0 +1,196 @@
+import { colors, borderRadius, shadows } from "../../../styles/theme";
+
+export const paymentsStyles = () => ({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "24px",
+    paddingBottom: "40px",
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "16px",
+  },
+  headerText: {
+    fontSize: "24px",
+    fontWeight: 700,
+    color: colors.textPrimary,
+    letterSpacing: "-0.5px",
+  },
+  kpiGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+    gap: "20px",
+  },
+  kpiCard: {
+    padding: "24px",
+    borderRadius: borderRadius.lg,
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+    boxShadow: shadows.sm,
+    border: `1px solid ${colors.border}`,
+  },
+  kpiTitle: {
+    fontSize: "14px",
+    fontWeight: 600,
+    color: colors.textSecondary,
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
+  },
+  kpiValue: {
+    fontSize: "28px",
+    fontWeight: 700,
+  },
+  kpiSubtext: {
+    fontSize: "13px",
+    fontWeight: 500,
+    marginTop: "4px",
+  },
+  tabsContainer: {
+    borderRadius: borderRadius.lg,
+    backgroundColor: colors.surface,
+    boxShadow: shadows.sm,
+    border: `1px solid ${colors.border}`,
+    overflow: "hidden",
+  },
+  tableContainer: {
+    overflow: "auto",
+  },
+  tableCell: {
+    fontSize: "14px",
+    padding: "16px",
+    borderBottom: `1px solid ${colors.border}`,
+  },
+  overdueChip: {
+    backgroundColor: colors.errorLight,
+    color: colors.errorDark,
+    fontWeight: 700,
+  },
+  onTrackChip: {
+    backgroundColor: colors.surfaceMuted,
+    color: colors.textSecondary,
+    fontWeight: 500,
+  },
+  inflowBadge: {
+    color: colors.successDark,
+    backgroundColor: colors.successLight,
+    padding: "2px 8px",
+    borderRadius: borderRadius.full,
+    fontSize: "12px",
+    fontWeight: 600,
+  },
+  outflowBadge: {
+    color: colors.errorDark,
+    backgroundColor: colors.errorLight,
+    padding: "2px 8px",
+    borderRadius: borderRadius.full,
+    fontSize: "12px",
+    fontWeight: 600,
+  },
+  modalPaper: {
+    width: "100%",
+    maxWidth: "640px",
+    borderRadius: borderRadius.xl,
+    overflow: "hidden",
+  },
+  modalTitle: {
+    padding: "20px 24px",
+    fontSize: "16px",
+    fontWeight: 700,
+    color: colors.textPrimary,
+    borderBottom: `1px solid ${colors.border}`,
+  },
+  modalContent: {
+    padding: "24px !important",
+  },
+  modalInfoBanner: (isInflow) => ({
+    display: "flex",
+    alignItems: { xs: "flex-start", sm: "center" },
+    justifyContent: "space-between",
+    flexDirection: { xs: "column", sm: "row" },
+    gap: "12px",
+    padding: "18px 20px",
+    marginBottom: "20px",
+    backgroundColor: isInflow ? colors.infoLight : colors.warningLight,
+    borderLeft: `4px solid ${isInflow ? colors.info : colors.warning}`,
+    borderRadius: borderRadius.md,
+  }),
+  modalPartyName: {
+    fontSize: "16px",
+    fontWeight: 700,
+    color: colors.textPrimary,
+    marginBottom: "4px",
+  },
+  modalReference: {
+    fontSize: "13px",
+    color: colors.textSecondary,
+    lineHeight: 1.5,
+  },
+  modalDueChip: {
+    backgroundColor: colors.white,
+    color: colors.error,
+    border: `1px solid ${colors.errorLight}`,
+    fontWeight: 700,
+    fontSize: "13px",
+  },
+  modalFullBalanceRow: {
+    display: "flex",
+    justifyContent: "flex-end",
+    marginBottom: "20px",
+  },
+  modalFullBalanceButton: {
+    minHeight: "40px",
+    padding: "8px 14px",
+    color: colors.primary,
+    borderColor: colors.primary,
+    borderRadius: borderRadius.md,
+    textTransform: "none",
+    fontWeight: 700,
+    "&:hover": {
+      borderColor: colors.primary,
+      backgroundColor: colors.infoLight,
+    },
+  },
+  modalFormGrid: {
+    display: "grid",
+    gridTemplateColumns: { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))" },
+    gap: "18px",
+  },
+  modalFieldFull: {
+    gridColumn: { xs: "auto", sm: "1 / -1" },
+  },
+  modalDateField: {
+    width: "100%",
+  },
+  modalNotes: {
+    "& .MuiInputBase-root": {
+      alignItems: "flex-start",
+    },
+  },
+  modalActions: {
+    padding: "16px 24px",
+    gap: "8px",
+    borderTop: `1px solid ${colors.border}`,
+  },
+  modalCancelButton: {
+    color: colors.textSecondary,
+    textTransform: "none",
+    fontWeight: 600,
+  },
+  modalSubmitButton: (isInflow) => ({
+    minHeight: "42px",
+    padding: "8px 18px",
+    backgroundColor: isInflow ? colors.successDark : colors.secondary,
+    color: colors.white,
+    borderRadius: borderRadius.md,
+    textTransform: "none",
+    fontWeight: 700,
+    "&:hover": {
+      backgroundColor: isInflow ? colors.success : colors.secondary,
+    },
+  }),
+});

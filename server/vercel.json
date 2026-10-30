@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "npm run migrate:receipt-indexes && npm run migrate:username-auth",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ]
+}

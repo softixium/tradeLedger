@@ -1,0 +1,113 @@
+import { colors, shadows, borderRadius } from "../../styles/theme";
+
+export const dashboardStyles = () => ({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "24px",
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "16px",
+    marginBottom: "8px",
+  },
+  headerTitle: {
+    fontSize: "28px",
+    fontWeight: 700,
+    color: colors.textPrimary,
+    letterSpacing: "-0.5px",
+  },
+  headerSubtitle: {
+    fontSize: "15px",
+    color: colors.textSecondary,
+    marginTop: "4px",
+  },
+  quickActions: {
+    display: "flex",
+    gap: "12px",
+    flexWrap: "wrap",
+  },
+  metricsGrid: {
+    display: "grid",
+    gridTemplateColumns: {
+      xs: "1fr",
+      sm: "repeat(2, minmax(0, 1fr))",
+      lg: "repeat(4, minmax(0, 1fr))",
+    },
+    gap: "20px",
+  },
+  metricCard: {
+    padding: "24px",
+    borderRadius: borderRadius.lg,
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+    boxShadow: shadows.sm,
+    border: `1px solid ${colors.border}`,
+    position: "relative",
+    overflow: "hidden",
+    transition: "transform 0.2s, box-shadow 0.2s",
+    "&:hover": {
+      transform: "translateY(-2px)",
+      boxShadow: shadows.md,
+    }
+  },
+  metricLabel: {
+    fontSize: "13px",
+    fontWeight: 600,
+    color: colors.textSecondary,
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
+  },
+  metricValue: {
+    fontSize: "28px",
+    fontWeight: 700,
+  },
+  sectionTitle: {
+    fontSize: "18px",
+    fontWeight: 700,
+    color: colors.textPrimary,
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  },
+  cardPanel: {
+    padding: { xs: "16px", sm: "24px" },
+    minWidth: 0,
+    borderRadius: borderRadius.lg,
+    backgroundColor: colors.surface,
+    boxShadow: shadows.sm,
+    border: `1px solid ${colors.border}`,
+    height: "100%",
+  },
+  overdueAlertCard: {
+    padding: "16px",
+    borderRadius: borderRadius.md,
+    border: `1px solid ${colors.errorLight}`,
+    borderLeft: `4px solid ${colors.error}`,
+    backgroundColor: "#FEF2F2",
+    marginBottom: "12px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "12px",
+    "& > :first-of-type": { minWidth: 0, overflowWrap: "anywhere" },
+      
+  },
+  tableContainer: {
+    borderRadius: borderRadius.md,
+    width: "100%",
+    maxWidth: "100%",
+    minWidth: 0,
+    overflowX: "auto",
+    overflowY: "hidden",
+    WebkitOverflowScrolling: "touch",
+    overscrollBehaviorX: "contain",
+    border: `1px solid ${colors.border}`,
+    marginTop: "16px",  
+  },
+});

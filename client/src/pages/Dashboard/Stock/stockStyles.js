@@ -1,0 +1,60 @@
+import { colors, borderRadius, shadows } from "../../../styles/theme";
+
+export const stockStyles = () => ({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "24px",
+  },
+  headingContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "16px",
+    marginBottom: "8px",
+  },
+  heading: {
+    fontSize: "24px",
+    fontWeight: 700,
+    color: colors.textPrimary,
+    letterSpacing: "-0.5px",
+  },
+  tableContainer: {
+    width: "100%",
+    maxWidth: "100%",
+    minWidth: 0,
+    borderRadius: borderRadius.lg,
+    boxShadow: shadows.sm,
+    border: `1px solid ${colors.border}`,
+    overflowX: "auto",
+    overflowY: "hidden",
+    WebkitOverflowScrolling: "touch",
+    overscrollBehaviorX: "contain",
+  },
+  tableCell: {
+    fontSize: "14px",
+    padding: "16px",
+    borderBottom: `1px solid ${colors.border}`,
+  },
+  inStock: {
+    color: colors.successDark,
+    backgroundColor: colors.successLight,
+    padding: "4px 12px",
+    borderRadius: borderRadius.full,
+    fontSize: "12px",
+    fontWeight: 700,
+    display: "inline-block",
+    textAlign: "center",
+  },
+  outOfStock: {
+    color: colors.errorDark,
+    backgroundColor: colors.errorLight,
+    padding: "4px 12px",
+    borderRadius: borderRadius.full,
+    fontSize: "12px",
+    fontWeight: 700,
+    display: "inline-block",
+    textAlign: "center",
+  },
+});
