@@ -1,5 +1,10 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "buildCommand": "npm run migrate:receipt-indexes && npm run migrate:username-auth"
+  "buildCommand": "npm run migrate:receipt-indexes",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ]
 }
