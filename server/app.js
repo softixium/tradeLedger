@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import connectDB from "./config/db.js";
 
 // Routes
 import authRoutes from "./routes/authRoutes.js";
@@ -33,6 +34,16 @@ app.use(express.json());
 
 app.get("/", (_req, res) => {
   res.json({ status: "ok", service: "trade-ledger-server" });
+});
+
+app.use("/api", async (_req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error("API database connection failed:", error);
+    res.status(503).json({ message: "API is temporarily unavailable" });
+  }
 });
 
 app.use("/api/auth", authRoutes);
