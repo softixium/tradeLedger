@@ -31,6 +31,10 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/", (_req, res) => {
+  res.json({ status: "ok", service: "trade-ledger-server" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/party", partyRoutes);
 app.use("/api/stock", stockRoutes);
